@@ -5,7 +5,8 @@ exports.get = async () =>
   await Product.find({ active: true }, "title description price _id active");
 
 exports.create = async (data) => {
-  await Product(data).save();
+  const product = await Product(data);
+  return product.save();
 };
 
 exports.put = async (id, body) => {

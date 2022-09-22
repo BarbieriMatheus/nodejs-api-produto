@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-mongoose.connect(
-  "mongodb+srv://matheus-barbieri:XqMPiVQOPkxpPfgw@mongodb-01.pye4h0p.mongodb.net/fiap"
-);
+require("dotenv").config();
+
+mongoose.connect(process.env.URL_MONGOOSE);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
